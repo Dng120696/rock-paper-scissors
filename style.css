@@ -61,7 +61,7 @@ img {
   border-radius: 1rem;
 }
 .score-count {
-  padding: 1rem 2rem;
+  padding: 1rem clamp(2.5rem, 4vw, 4rem);
   gap: 5px;
   flex-direction: column;
   align-items: center;
@@ -76,7 +76,7 @@ img {
 }
 .score {
   color: var(--Dark-Text);
-  font-size: clamp(4.2rem, 4.5vw, 4.6rem);
+  font-size: clamp(4.2rem, 4.5vw, 4.8rem);
 }
 .picking--section {
   height: clamp(45rem, 75vw, 60rem);
@@ -145,8 +145,6 @@ img {
 }
 .item:hover {
   cursor: pointer;
-  transform: translate(0);
-  transition: transform 1s ease;
 }
 .userItem:hover,
 .aiItem:hover {
@@ -214,7 +212,7 @@ img {
   opacity: 0;
   transition: left 800ms, opacity 800ms;
 }
-.section--rules p {
+p {
   align-items: center;
   justify-content: center;
 }
@@ -223,11 +221,11 @@ img {
   color: var(--Dark-Text);
   font-weight: 700;
 }
-.section--rules .img--rules {
+.img--rules {
   align-items: center;
   justify-content: center;
 }
-.section--rules .btn-close {
+.btn-close {
   position: absolute;
   bottom: 10rem;
   left: 50%;
@@ -264,5 +262,24 @@ img {
     position: absolute;
     bottom: 5%;
     right: 10%;
+  }
+  .section--rules {
+    width: 40rem;
+    height: 55rem;
+    text-align: left;
+    flex-direction: column;
+    background-color: #fff;
+    gap: 5rem;
+    box-shadow: 0 0 1rem var(--Dark-Text);
+    border-radius: 1rem;
+  }
+  .btn-close {
+    bottom: 43rem;
+    left: 85%;
+    transform: translate(-50%, -50%);
+  }
+  .section--rules p span:first-child {
+    position: absolute;
+    left: 8%;
   }
 }
