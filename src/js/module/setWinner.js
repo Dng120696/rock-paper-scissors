@@ -1,3 +1,5 @@
+import { userPick, aiPick } from "./pickItem.js";
+
 const countScore = document.querySelector(".score");
 let score = parseInt(countScore.innerHTML);
 
@@ -17,6 +19,7 @@ export function setWinner(user, ai) {
     (user === "spock" && ai === "rock")
   ) {
     score++;
+    userPick.parentElement.classList.add("winner");
     countScore.textContent = score;
     return "YOU WIN";
   } else {
@@ -25,6 +28,7 @@ export function setWinner(user, ai) {
       score--;
       countScore.textContent = score;
     }
+    aiPick.parentElement.classList.add("winner");
     return "YOU LOSE";
   }
 }

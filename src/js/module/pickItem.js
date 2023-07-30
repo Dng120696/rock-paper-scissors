@@ -4,10 +4,10 @@ import { result } from "./reset.js";
 
 const pickedItem = document.querySelector(".picked--items");
 const userPick = document.querySelector(".user-pick img");
-const AIpick = document.querySelector(".AI-pick img");
+const aiPick = document.querySelector(".AI-pick img");
 const items = document.querySelectorAll(".picking--items .item");
 
-let aipicked, userPicked;
+let aiPicked, userPicked;
 
 function pickItem(e) {
   const el = e.target.closest(".item");
@@ -22,11 +22,11 @@ function pickItem(e) {
 
   setTimeout(() => {
     const random = Math.trunc(Math.random() * items.length);
-    aipicked = items[random].dataset.pick;
-    AIpick.src = `./images/icon-${aipicked}.svg`;
-    AIpick.parentElement.classList.add(`${aipicked}`, "aiItem");
-    result.textContent = setWinner(userPicked, aipicked);
+    aiPicked = items[random].dataset.pick;
+    aiPick.src = `./images/icon-${aiPicked}.svg`;
+    aiPick.parentElement.classList.add(`${aiPicked}`, "aiItem");
+    result.textContent = setWinner(userPicked, aiPicked);
   }, 1000);
 }
 
-export { pickItem, aipicked, userPicked, pickedItem, userPick, AIpick };
+export { pickItem, aiPicked, userPicked, pickedItem, userPick, aiPick };
